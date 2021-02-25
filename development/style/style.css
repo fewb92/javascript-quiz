@@ -23,18 +23,19 @@ body {
 }
 
 .quiz-question-answer-container {
-    margin: 0 auto;
+    margin-left: 20px;
     border: solid 1px black;
     text-align: center;
     height: 400px;
-    width: 60%;
     background-color: white;
+    float: left;
+    width: 65%;
 }
 
 .quiz-header {
     margin-top: 0;
     margin-bottom: 40;
-    padding: 2px;
+    padding: 20px;
     height: 102px;
     background-color: blue;
 }
@@ -59,6 +60,21 @@ body {
     text-align: left;
     margin: 10px 0px;
     border: solid 1px pink;
+}
+
+.leaderboard-rankings {
+    padding: 0;
+    border: solid 1px black;
+    text-align: center;
+    height: 400px;
+    background-color: white;
+    float: right;
+    width: 30%;
+    margin-right: 20px;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .timer {
