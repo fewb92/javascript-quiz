@@ -77,9 +77,18 @@ ul {
     list-style-type: none;
 }
 
-.timer {
+.timer-and-start {
     margin: 0 auto;
+    height: 100px;
+    width: 80%;
+}
+
+.start-button, .timer {
     margin-top: 25px;
+    float: left;
     border: solid 1px black;
-    width: 40%;
+}
+
+.timer {
+    float: right;
 }
