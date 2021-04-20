@@ -5,7 +5,6 @@ var quizChoiceFirst = document.querySelector(".mc-1-choice")
 var quizChoiceSecond = document.querySelector(".mc-2-choice")
 var quizChoiceThird = document.querySelector(".mc-3-choice")
 var quizChoiceFourth = document.querySelector(".mc-4-choice")
-
 var timerSeconds = document.querySelector(".timer-seconds")
 
 var timerCount = 60;
@@ -16,9 +15,6 @@ var timerCount = 60;
 // console.log(quizChoiceFourth)
 var btnStart = document.querySelector(".start-button")
 
-
-
-// arry for questions + answers
 var allQuestions = [
     {
         Question: 'What is a boolean?',
@@ -55,6 +51,7 @@ var allQuestions = [
 // allQuestions[i].Correct
 
 var count = 0
+
 for (i = 0; i < 5; i++) {
     var currentQuestion = allQuestions[i].Question
     console.log(currentQuestion)
@@ -108,7 +105,7 @@ function startTimer() {
     timer = setInterval(function() {
         timerCount--
         timerSeconds.innerHTML = timerCount;
-        console.log(timerCount)
+        // console.log(timerCount)
         // make sure time doesn't run after hitting zero
         if (timerCount === 0){
         clearInterval(timer);
@@ -118,12 +115,16 @@ function startTimer() {
 
 startTimer()
 
-// start game function
-    // timer function
-    // [quesiton loop function - needs own array
-    // answer loop function - needs own array]
-    // evaluate correct user submited answer
-    // if question answer = false subtract time from timer
-    // game over at timer reach zero OR all questions answered game over 
-    // when game over add initials to save high score
-    // write high score to leaderboard
+// when user presses start
+    // set count = 0
+    // start timer
+    // reveal quiz
+    // check answer
+        // when user presses answer button
+            // if answer correct add time, add to score
+            // else subtract time
+            // count ++
+    // "if count =" statements for questions and answer display
+
+
+
