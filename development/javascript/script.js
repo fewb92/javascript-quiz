@@ -52,45 +52,45 @@ var allQuestions = [
 
 var count = 0
 
-for (i = 0; i < 5; i++) {
-    var currentQuestion = allQuestions[i].Question
-    console.log(currentQuestion)
+// for (i = 0; i < 5; i++) {
+//     var currentQuestion = allQuestions[i].Question
+//     console.log(currentQuestion)
 
-    if (currentQuestion === allQuestions[0].Question) {
-        quizQuestion.innerHTML = currentQuestion
-        quizChoiceFirst.innerHTML = allQuestions[0].Choices[0]
-        quizChoiceSecond.innerHTML = allQuestions[0].Choices[1]
-        quizChoiceThird.innerHTML = allQuestions[0].Choices[2]
-        quizChoiceFourth.innerHTML = allQuestions[0].Choices[3]
-    } else if (currentQuestion === allQuestions[1].Question) {
-        quizQuestion.innerHTML = currentQuestion
-        quizChoiceFirst.innerHTML = allQuestions[1].Choices[0]
-        quizChoiceSecond.innerHTML = allQuestions[1].Choices[1]
-        quizChoiceThird.innerHTML = allQuestions[1].Choices[2]
-        quizChoiceFourth.innerHTML = allQuestions[1].Choices[3]
-    } else if (currentQuestion === allQuestions[2].Question) {
-        quizQuestion.innerHTML = currentQuestion
-        quizChoiceFirst.innerHTML = allQuestions[2].Choices[0]
-        quizChoiceSecond.innerHTML = allQuestions[2].Choices[1]
-        quizChoiceThird.innerHTML = allQuestions[2].Choices[2]
-        quizChoiceFourth.innerHTML = allQuestions[2].Choices[3]
-    } else if (currentQuestion === allQuestions[3].Question) {
-        quizQuestion.innerHTML = currentQuestion
-        quizChoiceFirst.innerHTML = allQuestions[3].Choices[0]
-        quizChoiceSecond.innerHTML = allQuestions[3].Choices[1]
-        quizChoiceThird.innerHTML = allQuestions[3].Choices[2]
-        quizChoiceFourth.innerHTML = allQuestions[3].Choices[3]
-    } else {
-        quizQuestion.innerHTML = currentQuestion
-        quizChoiceFirst.innerHTML = allQuestions[4].Choices[0]
-        quizChoiceSecond.innerHTML = allQuestions[4].Choices[1]
-        quizChoiceThird.innerHTML = allQuestions[4].Choices[2]
-        quizChoiceFourth.innerHTML = allQuestions[4].Choices[3]
-    }
-}
+//     if (currentQuestion === allQuestions[0].Question) {
+//         quizQuestion.innerHTML = currentQuestion
+//         quizChoiceFirst.innerHTML = allQuestions[0].Choices[0]
+//         quizChoiceSecond.innerHTML = allQuestions[0].Choices[1]
+//         quizChoiceThird.innerHTML = allQuestions[0].Choices[2]
+//         quizChoiceFourth.innerHTML = allQuestions[0].Choices[3]
+//     } else if (currentQuestion === allQuestions[1].Question) {
+//         quizQuestion.innerHTML = currentQuestion
+//         quizChoiceFirst.innerHTML = allQuestions[1].Choices[0]
+//         quizChoiceSecond.innerHTML = allQuestions[1].Choices[1]
+//         quizChoiceThird.innerHTML = allQuestions[1].Choices[2]
+//         quizChoiceFourth.innerHTML = allQuestions[1].Choices[3]
+//     } else if (currentQuestion === allQuestions[2].Question) {
+//         quizQuestion.innerHTML = currentQuestion
+//         quizChoiceFirst.innerHTML = allQuestions[2].Choices[0]
+//         quizChoiceSecond.innerHTML = allQuestions[2].Choices[1]
+//         quizChoiceThird.innerHTML = allQuestions[2].Choices[2]
+//         quizChoiceFourth.innerHTML = allQuestions[2].Choices[3]
+//     } else if (currentQuestion === allQuestions[3].Question) {
+//         quizQuestion.innerHTML = currentQuestion
+//         quizChoiceFirst.innerHTML = allQuestions[3].Choices[0]
+//         quizChoiceSecond.innerHTML = allQuestions[3].Choices[1]
+//         quizChoiceThird.innerHTML = allQuestions[3].Choices[2]
+//         quizChoiceFourth.innerHTML = allQuestions[3].Choices[3]
+//     } else {
+//         quizQuestion.innerHTML = currentQuestion
+//         quizChoiceFirst.innerHTML = allQuestions[4].Choices[0]
+//         quizChoiceSecond.innerHTML = allQuestions[4].Choices[1]
+//         quizChoiceThird.innerHTML = allQuestions[4].Choices[2]
+//         quizChoiceFourth.innerHTML = allQuestions[4].Choices[3]
+//     }
+// }
 
 
-console.log(allQuestions[0].Choices[2])
+// console.log(allQuestions[0].Choices[2])
 
 
 // quizChoiceFirst.textContent = "Multiple Choice 1"
@@ -113,7 +113,59 @@ function startTimer() {
     }, 1000)
 }
 
-startTimer()
+// function incrementCount() {
+
+// }
+
+
+btnStart.onclick = function () {
+    startTimer()
+    console.log(count)
+    // hide start button
+
+    if (count = 0) {
+        console.log(count)
+        var currentQuestion = allQuestions[count].Question
+        quizQuestion.innerHTML = currentQuestion
+        quizChoiceFirst.innerHTML = allQuestions[count].Choices[0]
+        quizChoiceSecond.innerHTML = allQuestions[count].Choices[1]
+        quizChoiceThird.innerHTML = allQuestions[count].Choices[2]
+        quizChoiceFourth.innerHTML = allQuestions[count].Choices[3]
+    } else if (count = 1) {
+        console.log(count)
+        var currentQuestion = allQuestions[count].Question
+        quizQuestion.innerHTML = currentQuestion
+        quizChoiceFirst.innerHTML = allQuestions[count].Choices[0]
+        quizChoiceSecond.innerHTML = allQuestions[count].Choices[1]
+        quizChoiceThird.innerHTML = allQuestions[count].Choices[2]
+        quizChoiceFourth.innerHTML = allQuestions[count].Choices[3]
+    } else if (count = 2) {
+        console.log(count)
+        var currentQuestion = allQuestions[count].Question
+        quizQuestion.innerHTML = currentQuestion
+        quizChoiceFirst.innerHTML = allQuestions[count].Choices[0]
+        quizChoiceSecond.innerHTML = allQuestions[count].Choices[1]
+        quizChoiceThird.innerHTML = allQuestions[count].Choices[2]
+        quizChoiceFourth.innerHTML = allQuestions[count].Choices[3]
+    } else if (count = 3) {
+        console.log(count)
+        var currentQuestion = allQuestions[count].Question
+        quizQuestion.innerHTML = currentQuestion
+        quizChoiceFirst.innerHTML = allQuestions[count].Choices[0]
+        quizChoiceSecond.innerHTML = allQuestions[count].Choices[1]
+        quizChoiceThird.innerHTML = allQuestions[count].Choices[2]
+        quizChoiceFourth.innerHTML = allQuestions[count].Choices[3]
+    } else {
+        console.log(count)
+        var currentQuestion = allQuestions[4].Question
+        quizQuestion.innerHTML = currentQuestion
+        quizChoiceFirst.innerHTML = allQuestions[4].Choices[0]
+        quizChoiceSecond.innerHTML = allQuestions[4].Choices[1]
+        quizChoiceThird.innerHTML = allQuestions[4].Choices[2]
+        quizChoiceFourth.innerHTML = allQuestions[4].Choices[3]
+    }
+}
+
 
 // when user presses start
     // set count = 0
@@ -125,6 +177,10 @@ startTimer()
             // else subtract time
             // count ++
     // "if count =" statements for questions and answer display
+    // if count > no. of questions
+        // reveal score
+        // local storage score
+        // local storage user provided name
 
 
 
