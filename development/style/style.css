@@ -92,3 +92,19 @@ ul {
 .timer {
     float: right;
 }
+
+#correctText {
+    display: none;
+}
+
+#correctText.show {
+    display: block;
+}
+
+#wrongText {
+    display: none;
+}
+
+#wrongText.show {
+    display: block;
+}
