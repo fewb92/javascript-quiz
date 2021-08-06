@@ -204,9 +204,49 @@ quizChoiceFourth.addEventListener('click', event => {
 })
 }
 
-const compareChoice = function (e) {
-    var choice = e.target.textContent
-}
+function answerCheck() {
+    if (this.value == question.answer) {
+        correctText.setAttribute("id", "correctText.show");
+        score++;
+        currentScoreEl.textContent = score;
+        questionOrder++;
+        questionEl.removeChild(ask);
+        answersEl.removeChild(buttonOne);
+        answersEl.removeChild(buttonTwo);
+        answersEl.removeChild(buttonThree);
+        answersEl.removeChild(buttonFour);
+        if (questionOrder < questions.length){
+            cueQuestion();
+        }
+    } else {
+        wrongText.setAttribute("id", "wrongText.show");
+        countTime -= 3;
+        setTimeout(function() { wrongText.setAttribute("id", "wrongText"); }, 500);
+    }
+};
+
+function cueQuestion() {
+    setTimeout(function() { correctText.setAttribute("id", "correctText"); },1500);
+    question = allQuestions[questionOrder];
+    ask = document.createElement('span');
+    ask.setAttribute("class", "mt-4");
+    ask.textContent = questions[questionOrder].prompt;
+    ask.id = "ask";
+    questionEl.appendChild(ask);
+    for (var i = 0; i < question.choices.length; i++) {
+        choice = document.createElement('button');
+        choice.textContent = question.choices[i];
+        choice.id = "button" + (i + 1);
+        choice.value = i;
+        choice.setAttribute("class", "btn-sm btn-primary px-2 mx-2 mt-1");
+        answersEl.appendChild(choice);
+    }
+    // Event listeners for answer buttons
+    quizChoiceFirst.addEventListener('click', answerCheck);
+    quizChoiceSecond.addEventListener('click', answerCheck);
+    quizChoiceThird.addEventListener('click', answerCheck);
+    quizChoiceFourth.addEventListener('click', answerCheck);
+};
 
 function answerCheck() {
     if (this.value == question.answer) {
@@ -228,6 +268,7 @@ function answerCheck() {
         setTimeout(function() { wrongText.setAttribute("id", "wrongText"); }, 500);
     }
 };
+
 
 
 // function that will be a click handler for the answer buttons -> accept event as param -> added .quiz-choice-container
