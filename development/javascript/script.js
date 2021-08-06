@@ -1,10 +1,12 @@
 // variable declarations
 var quizQuestion = document.querySelector(".quiz-question")
 console.log(quizQuestion)
+var quizChoices = document.querySelector(".quiz-choices")
 var quizChoiceFirst = document.querySelector(".mc-1-choice")
 var quizChoiceSecond = document.querySelector(".mc-2-choice")
 var quizChoiceThird = document.querySelector(".mc-3-choice")
 var quizChoiceFourth = document.querySelector(".mc-4-choice")
+// var quizChoice = document.querySelectorAll(".mc-choice")
 var timerSeconds = document.querySelector(".timer-seconds")
 
 var timerCount = 60;
@@ -28,7 +30,7 @@ var allQuestions = [
     },
     {
         Question: 'What is the correct syntax for linking to an external file called script.js?',
-        Choices: ['<script = script.js/>', '<script src="script.js>', '<script src="script.js/>', '<script: script.js>'],
+        Choices: ['<script = script.js/>', '<script src="script.js">', '<script src="script.js/>', '<script: script.js>'],
         Correct: '<script src="script.js>'
     },
     {
@@ -118,53 +120,133 @@ function startTimer() {
 // }
 
 
+
+
 btnStart.onclick = function () {
     startTimer()
     console.log(count)
-    // hide start button
-
-    if (count = 0) {
-        console.log(count)
-        var currentQuestion = allQuestions[count].Question
-        quizQuestion.innerHTML = currentQuestion
-        quizChoiceFirst.innerHTML = allQuestions[count].Choices[0]
-        quizChoiceSecond.innerHTML = allQuestions[count].Choices[1]
-        quizChoiceThird.innerHTML = allQuestions[count].Choices[2]
-        quizChoiceFourth.innerHTML = allQuestions[count].Choices[3]
-    } else if (count = 1) {
-        console.log(count)
-        var currentQuestion = allQuestions[count].Question
-        quizQuestion.innerHTML = currentQuestion
-        quizChoiceFirst.innerHTML = allQuestions[count].Choices[0]
-        quizChoiceSecond.innerHTML = allQuestions[count].Choices[1]
-        quizChoiceThird.innerHTML = allQuestions[count].Choices[2]
-        quizChoiceFourth.innerHTML = allQuestions[count].Choices[3]
-    } else if (count = 2) {
-        console.log(count)
-        var currentQuestion = allQuestions[count].Question
-        quizQuestion.innerHTML = currentQuestion
-        quizChoiceFirst.innerHTML = allQuestions[count].Choices[0]
-        quizChoiceSecond.innerHTML = allQuestions[count].Choices[1]
-        quizChoiceThird.innerHTML = allQuestions[count].Choices[2]
-        quizChoiceFourth.innerHTML = allQuestions[count].Choices[3]
-    } else if (count = 3) {
-        console.log(count)
-        var currentQuestion = allQuestions[count].Question
-        quizQuestion.innerHTML = currentQuestion
-        quizChoiceFirst.innerHTML = allQuestions[count].Choices[0]
-        quizChoiceSecond.innerHTML = allQuestions[count].Choices[1]
-        quizChoiceThird.innerHTML = allQuestions[count].Choices[2]
-        quizChoiceFourth.innerHTML = allQuestions[count].Choices[3]
-    } else {
-        console.log(count)
-        var currentQuestion = allQuestions[4].Question
-        quizQuestion.innerHTML = currentQuestion
-        quizChoiceFirst.innerHTML = allQuestions[4].Choices[0]
-        quizChoiceSecond.innerHTML = allQuestions[4].Choices[1]
-        quizChoiceThird.innerHTML = allQuestions[4].Choices[2]
-        quizChoiceFourth.innerHTML = allQuestions[4].Choices[3]
-    }
+    btnStart.style.display = 'none'
+    showQuestion()
+    storeChoice()
 }
+
+function showQuestion() {
+    console.log(count)
+    var currentQuestion = allQuestions[count].Question
+    quizQuestion.textContent = currentQuestion
+    quizChoiceFirst.textContent = allQuestions[count].Choices[0]
+    quizChoiceSecond.textContent = allQuestions[count].Choices[1]
+    quizChoiceThird.textContent = allQuestions[count].Choices[2]
+    quizChoiceFourth.textContent = allQuestions[count].Choices[3]
+}
+
+let html = '<button>Next</button>'
+
+
+const storeChoice = function () {
+quizChoiceFirst.addEventListener('click', event => {
+    var choice = event.target.textContent
+    console.log(choice)
+    if (allQuestions[count].Correct === choice) {
+        count++
+        console.log(timerCount)
+        console.log(count)
+        console.log('right answer')
+
+        let nextBtn = document.createElement('button')
+        nextBtn.innerHTML('<button>Next</button>')
+        nextBtn.style.display = 'block'
+        nextBtn.classList.add('start-button')
+        
+    }
+})
+quizChoiceSecond.addEventListener('click', event => {
+    var choice = event.target.textContent
+    console.log(choice)
+    if (allQuestions[count].Correct === choice) {
+
+        count++
+        console.log(count)
+        console.log('right answer')
+        if (count < allQuestions.length) {
+            const nextBtn = document.createElement('div')
+            nextBtn.classList.add('start-button')
+        }
+    }
+})
+quizChoiceThird.addEventListener('click', event => {
+    var choice = event.target.textContent
+    console.log(choice)
+    if (allQuestions[count].Correct === choice) {
+        count++
+        console.log(count)
+        console.log('right answer')
+        if (count < allQuestions.length) {
+            const nextBtn = document.createElement('div')
+            nextBtn.classList.add('start-button')
+        }
+    }
+})
+quizChoiceFourth.addEventListener('click', event => {
+    var choice = event.target.textContent
+    console.log(choice)
+    if (allQuestions[count].Correct === choice) {
+        count++
+        console.log(count)
+        console.log('right answer')
+        if (count < allQuestions.length) {
+            const nextBtn = document.createElement('div')
+            nextBtn.classList.add('start-button')
+        }
+    }
+
+    
+})
+}
+
+const compareChoice = function (e) {
+    var choice = e.target.textContent
+}
+
+function answerCheck() {
+    if (this.value == question.answer) {
+        correctText.setAttribute("id", "correctText.show");
+        score++;
+        currentScoreEl.textContent = score;
+        questionOrder++;
+        questionEl.removeChild(ask);
+        answersEl.removeChild(buttonOne);
+        answersEl.removeChild(buttonTwo);
+        answersEl.removeChild(buttonThree);
+        answersEl.removeChild(buttonFour);
+        if (questionOrder < questions.length){
+            cueQuestion();
+        }
+    } else {
+        wrongText.setAttribute("id", "wrongText.show");
+        countTime -= 3;
+        setTimeout(function() { wrongText.setAttribute("id", "wrongText"); }, 500);
+    }
+};
+
+
+// function that will be a click handler for the answer buttons -> accept event as param -> added .quiz-choice-container
+    // grab event.target.textContent save as choice var
+    // if statement -> compare allQuestions[count].correct === choice
+        // run logic for a correct answer
+        // user feedback -> increment score
+    // else
+        // run logic for incorrect answer
+        // user feedback -> decrement score -> time from clock???
+    // if count < allQuestions.length
+        // show the next button
+    // else
+        // endGame()
+
+// next button click handler
+    // increment count
+    // showQuestion()
+
 
 
 // when user presses start
